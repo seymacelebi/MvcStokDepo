@@ -1,0 +1,26 @@
+﻿@using BonusMvcStok.Models.Entity
+@model List<TBLKATEGORI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORI ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+<tr>
+    <td>@x.id</td>
+    <td>@x.ad</td>
+    <td><a href="/Kategori/KategoriSil/@x.id" class="btn btn-danger">SİL</a></td>
+    <td><a href="/Kategori/KategoriGetir/@x.id" class="btn btn-success">GÜNCELLE</a></td>
+</tr>
+    }
+</table>
+<a href="/Kategori/YeniKategori/" class="btn btn-primary">Yeni Kategori</a>
+ 

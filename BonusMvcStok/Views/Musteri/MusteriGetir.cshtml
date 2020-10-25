@@ -1,0 +1,36 @@
+﻿@model BonusMvcStok.Models.Entity.TBLMUSTERI
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*ürün o kutu içine taşıdı*@
+@using (Html.BeginForm("MusteriGuncelle", "Musteri", FormMethod.Post))
+{
+
+
+    <h2>Müşteri Güncelleme</h2>
+    <br />
+    //id ekranda gözükmesin diye Hiddenfor yaptık
+
+    @Html.HiddenFor(x => x.id, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.TextAreaFor(x => x.ad, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.TextAreaFor(x => x.soyad, new { @class = "form-control" })
+    
+    <br />
+    @Html.TextAreaFor(x => x.sehir, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.TextAreaFor(x => x.bakiye, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Güncelle</button>
+
+}
+

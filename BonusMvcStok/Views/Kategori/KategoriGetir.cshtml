@@ -1,0 +1,24 @@
+﻿@model BonusMvcStok.Models.Entity.TBLKATEGORI
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*kategoriyi o kutu içine taşıdı*@
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+
+
+    <h2>Kategori Güncelleme</h2>
+    <br />
+    //id ekranda gözükmesin diye Hiddenfor yaptık
+
+    @Html.HiddenFor(x => x.id, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.TextAreaFor(x => x.ad, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Güncelle</button>
+
+}
